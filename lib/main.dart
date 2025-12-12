@@ -103,16 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 _buildLabeledTextField("Password:", "Enter password", true),
                 const SizedBox(height: 20),
 
-                // Перехід на екран реєстрації
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
-                  },
-                  child: const Text("Sign up", style: TextStyle(color: Colors.black)),
-                ),
-
-                const SizedBox(height: 10),
-
+                // --- ЗМІНИ ТУТ ---
+                // Спочатку кнопка Login (синя)
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
@@ -121,6 +113,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: const Text("Login"),
                 ),
+
+                const SizedBox(height: 10),
+
+                // Потім кнопка Sign up (біла, перехід на реєстрацію)
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                  },
+                  child: const Text("Sign up", style: TextStyle(color: Colors.black)),
+                ),
+                // ----------------
 
                 const SizedBox(height: 10),
 
